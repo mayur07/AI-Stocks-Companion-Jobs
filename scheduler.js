@@ -1,5 +1,6 @@
 require('dotenv').config();
 const cron = require('node-cron');
+const http = require('http');
 const logger = require('./services/logger');
 const NewsAggregator = require('./services/newsAggregator');
 const RedditService = require('./services/redditService');
@@ -13,6 +14,7 @@ class JobScheduler {
     this.isRunning = false;
     this.lastRun = null;
     this.runCount = 0;
+    this.healthServer = null;
   }
 
   /**
@@ -82,6 +84,33 @@ class JobScheduler {
   }
 
   /**
+   * Start health check server for Railway
+   */
+  startHealthServer() {
+    const port = process.env.PORT || 3000;
+    
+    this.healthServer = http.createServer((req, res) => {
+      if (req.url === '/' || req.url === '/health') {
+        const status = this.getStatus();
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          status: 'healthy',
+          timestamp: new Date().toISOString(),
+          scheduler: status
+        }));
+      } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+      }
+    });
+
+    this.healthServer.listen(port, () => {
+      logger.info(`Health server started on port ${port}`);
+      console.log(`🏥 Health server started on port ${port}`);
+    });
+  }
+
+  /**
    * Start the scheduler
    */
   start() {
@@ -92,6 +121,9 @@ class JobScheduler {
     }
 
     this.isRunning = true;
+    
+    // Start health server for Railway
+    this.startHealthServer();
     
     // Run immediately on start
     logger.info('🚀 Starting AI Stocks Companion Jobs Scheduler');
