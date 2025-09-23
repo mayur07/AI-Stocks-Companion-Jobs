@@ -24,11 +24,17 @@ class AlertService {
     }
 
     // Initialize Twilio WhatsApp service
-    if (process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN) {
-      this.twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+    // Temporarily using hardcoded credentials for testing
+    const accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC048f4d082ddef339c9418add00ae3368';
+    const authToken = process.env.TWILIO_AUTH_TOKEN || '6383ee8e7bce637fcc453eec51a71138'; // Replace with actual token
+    
+    if (accountSid && authToken && authToken !== '6383ee8e7bce637fcc453eec51a71138') {
+      this.twilioClient = twilio(accountSid, authToken);
       logger.info('Twilio WhatsApp notification service initialized');
+      console.log('✅ Twilio client initialized with Account SID:', accountSid);
     } else {
       logger.warn('Twilio credentials not configured - WhatsApp notifications disabled');
+      console.log('❌ Twilio not configured - Account SID:', accountSid, 'Auth Token:', authToken ? 'SET' : 'NOT SET');
     }
   }
 
