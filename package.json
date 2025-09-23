@@ -1,0 +1,36 @@
+{
+  "name": "ai-stocks-companion-jobs",
+  "version": "1.0.0",
+  "description": "Background jobs for AI Stocks Companion - News and Reddit monitoring",
+  "main": "scheduler.js",
+  "scripts": {
+    "start": "node scheduler.js",
+    "dev": "nodemon scheduler.js",
+    "news-only": "node jobs/news-monitor.js",
+    "reddit-only": "node jobs/reddit-monitor.js",
+    "test": "node test-jobs.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "8.1.6",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "node-cron": "4.2.1",
+    "rss-parser": "3.13.0",
+    "snoowrap": "^1.23.0",
+    "twilio": "5.9.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "stocks",
+    "finance",
+    "news",
+    "reddit",
+    "monitoring",
+    "background-jobs"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
