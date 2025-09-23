@@ -2,11 +2,6 @@ const sgMail = require('@sendgrid/mail');
 const twilio = require('twilio');
 const logger = require('./logger');
 
-const TWILIO_ACCOUNT_SID = 'AC048f4d082ddef339c9418add00ae3368';
-const TWILIO_AUTH_TOKEN = 'bda344a58e3a909eda7b8bcd0462cff4';
-const TWILIO_PHONE_NUMBER = '+14155238886';
-const TWILIO_WHATSAPP_CONTENT_SID = 'HXb5b62575e6e4ff6129ad7c8efe1f983e';
-
 class AlertService {
   constructor() {
     this.emailTransporter = null;
