@@ -28,7 +28,7 @@ class AlertService {
     const accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC048f4d082ddef339c9418add00ae3368';
     const authToken = process.env.TWILIO_AUTH_TOKEN || '6383ee8e7bce637fcc453eec51a71138'; // Replace with actual token
     
-    if (accountSid && authToken && authToken !== '6383ee8e7bce637fcc453eec51a71138') {
+    if (accountSid && authToken && authToken !== '[AuthToken]') {
       this.twilioClient = twilio(accountSid, authToken);
       logger.info('Twilio WhatsApp notification service initialized');
       console.log('✅ Twilio client initialized with Account SID:', accountSid);
