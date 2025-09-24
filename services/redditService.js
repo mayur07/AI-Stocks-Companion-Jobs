@@ -18,10 +18,10 @@ class RedditService {
       if (this.isRedditConfigured()) {
         this.redditClient = new Snoowrap({
           userAgent: process.env.REDDIT_USER_AGENT || 'AI-Stocks-Companion-Jobs/1.0.0',
-          clientId: process.env.REDDIT_CLIENT_ID,
-          clientSecret: process.env.REDDIT_CLIENT_SECRET,
-          username: process.env.REDDIT_USERNAME,
-          password: process.env.REDDIT_PASSWORD
+          clientId: 'L4_g-rlh9JrAFtOTFX1klw',
+          clientSecret: 'YInizOQ30_ZQXKc4oKlgo8pYqmKJ5g',
+          username: 'Few-Obligation-4977',
+          password: 'Admin123@'
         });
         logger.info('Reddit client initialized successfully');
       } else {
