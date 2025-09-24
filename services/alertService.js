@@ -150,7 +150,8 @@ class AlertService {
       console.log(`📱 To: ${phoneNumber}`);
       console.log(`📱 Message: ${message.substring(0, 100)}...`);
 
-      const whatsappNumber = `whatsapp:${phoneNumber}`;
+      // Ensure phone number has correct format
+      const whatsappNumber = phoneNumber.startsWith('whatsapp:') ? phoneNumber : `whatsapp:${phoneNumber}`;
       const fromNumber = 'whatsapp:+14155238886'; // Twilio WhatsApp Sandbox number
 
       const messageResult = await this.twilioClient.messages.create({
