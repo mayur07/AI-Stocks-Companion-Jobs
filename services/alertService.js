@@ -250,7 +250,7 @@ class AlertService {
     </div>`;
   }
 
-  // Format WhatsApp message for news items
+  // Format WhatsApp message for news items (concise version under 1600 chars)
   formatWhatsAppMessage(newsItems) {
     const totalNews = newsItems.length;
     const currentTime = new Date().toLocaleString();
@@ -262,42 +262,43 @@ class AlertService {
     const redditCount = redditPosts.length;
     const newsCount = regularNews.length;
 
-    let message = `🚨 *BREAKING NEWS ALERT* 🚨\n`;
-    message += `📊 ${totalNews} High-Impact Financial Stories\n`;
-    message += `⏰ ${currentTime}\n\n`;
-
-    message += `📈 *Market Summary:*\n`;
-    message += `• Total Stories: ${totalNews} (${newsCount} News + ${redditCount} Reddit)\n`;
-    message += `• Sources: ${[...new Set(newsItems.map(item => item.source))].join(', ')}\n\n`;
+    let message = `🚨 *MARKET ALERT* 🚨\n`;
+    message += `📊 ${totalNews} Stories | ⏰ ${currentTime}\n\n`;
 
     if (regularNews.length > 0) {
-      message += `📰 *High-Impact News Stories:*\n`;
-      regularNews.slice(0, 3).forEach((news, index) => {
-        message += `${index + 1}. ${news.title}\n`;
-        message += `   Source: ${news.source}\n`;
-        message += `   Time: ${news.publishedAt ? news.publishedAt.toLocaleString() : 'Unknown'}\n`;
-        message += `   Link: ${news.url}\n\n`;
+      message += `📰 *Top News (${newsCount}):*\n`;
+      regularNews.slice(0, 2).forEach((news, index) => {
+        // Truncate title if too long
+        const title = news.title.length > 70 ? news.title.substring(0, 70) + '...' : news.title;
+        message += `${index + 1}. ${title}\n`;
+        message += `   ${news.source}\n\n`;
       });
 
-      if (regularNews.length > 3) {
-        message += `... and ${regularNews.length - 3} more news stories\n\n`;
+      if (regularNews.length > 2) {
+        message += `+${regularNews.length - 2} more news\n\n`;
       }
     }
 
     if (redditPosts.length > 0) {
-      message += `🔥 *Reddit Hot Discussions:*\n`;
-      redditPosts.slice(0, 2).forEach((post, index) => {
-        message += `${index + 1}. ${post.title}\n`;
-        message += `   Source: ${post.source} | Score: ${post.score}\n`;
-        message += `   Link: ${post.url}\n\n`;
+      message += `🔥 *Reddit Hot (${redditCount}):*\n`;
+      redditPosts.slice(0, 1).forEach((post, index) => {
+        // Truncate title if too long
+        const title = post.title.length > 70 ? post.title.substring(0, 70) + '...' : post.title;
+        message += `${index + 1}. ${title}\n`;
+        message += `   r/${post.source} (${post.score}↑)\n\n`;
       });
 
-      if (redditPosts.length > 2) {
-        message += `... and ${redditPosts.length - 2} more Reddit posts\n\n`;
+      if (redditPosts.length > 1) {
+        message += `+${redditPosts.length - 1} more Reddit\n\n`;
       }
     }
 
-    message += `⚠️ *Disclaimer:* This is for informational purposes only and not financial advice. Always do your own research before making investment decisions.`;
+    message += `⚠️ Not financial advice. Do your own research.`;
+
+    // Ensure message is under 1600 characters
+    if (message.length > 1600) {
+      message = message.substring(0, 1590) + '\n⚠️ (truncated)';
+    }
 
     return message;
   }
