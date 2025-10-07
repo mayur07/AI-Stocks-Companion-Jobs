@@ -35,7 +35,7 @@ class EnhancedAlertService {
 
     // Initialize Twilio WhatsApp service
     const accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC048f4d082ddef339c9418add00ae3368';
-    const authToken = process.env.TWILIO_AUTH_TOKEN || '6383ee8e7bce637fcc453eec51a71138';
+    const authToken = process.env.TWILIO_AUTH_TOKEN || 'e72f4480471dadb8e31977bd7a437eb9';
     
     if (accountSid && authToken && authToken !== '[AuthToken]') {
       this.twilioClient = twilio(accountSid, authToken);
