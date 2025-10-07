@@ -5,10 +5,13 @@
   "main": "scheduler.js",
   "scripts": {
     "start": "node scheduler.js",
+    "start-enhanced": "node enhancedScheduler.js",
     "dev": "nodemon scheduler.js",
+    "dev-enhanced": "nodemon enhancedScheduler.js",
     "news-only": "node jobs/news-monitor.js",
     "reddit-only": "node jobs/reddit-monitor.js",
-    "test": "node test-jobs.js"
+    "test": "node test-jobs.js",
+    "test-enhanced": "node test-enhanced-jobs.js"
   },
   "dependencies": {
     "@sendgrid/mail": "8.1.6",
@@ -18,7 +21,8 @@
     "rss-parser": "3.13.0",
     "snoowrap": "^1.23.0",
     "twilio": "5.9.0",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "openai": "^4.20.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
