@@ -457,43 +457,99 @@ class EnhancedNewsAggregator {
       }
     ];
     
-    // Enhanced impact keywords
+    // Enhanced impact keywords with comprehensive coverage for top financial news
     this.impactKeywords = [
-      // High Impact Keywords
-      'earnings', 'fed', 'federal reserve', 'interest rate', 'inflation', 'gdp', 'unemployment',
-      'ipo', 'merger', 'acquisition', 'dividend', 'stock split', 'buyback',
-      'breaking', 'alert', 'surge', 'plunge', 'rally', 'crash', 'volatility',
-      'central bank', 'monetary policy', 'fiscal policy', 'trade war', 'tariff',
-      'oil price', 'gold price', 'bitcoin', 'crypto', 'dollar', 'yen', 'euro',
-      'recession', 'recovery', 'growth', 'decline', 'outlook', 'forecast',
-      // Additional High Impact Keywords
-      'bankruptcy', 'chapter 11', 'liquidation', 'restructuring', 'layoffs', 'job cuts',
-      'ceo resignation', 'cfo resignation', 'executive departure', 'board resignation',
-      'sec investigation', 'regulatory action', 'fine', 'penalty', 'settlement',
-      'lawsuit', 'class action', 'fraud', 'accounting scandal', 'audit issues',
-      'material weakness', 'going concern', 'delisting', 'trading halt',
-      'market crash', 'flash crash', 'circuit breaker', 'bear market',
-      'economic downturn', 'vix spike', 'panic selling', 'margin call',
-      'forced liquidation', 'fire sale', 'distressed assets',
-      'quantitative easing', 'tapering', 'inflation target',
-      'gdp growth', 'gdp contraction', 'jobless claims',
-      'consumer confidence', 'manufacturing index', 'services index',
-      'retail sales', 'inflation data', 'cpi', 'ppi',
-      'trade war', 'tariffs', 'sanctions', 'brexit', 'china trade', 'eu crisis',
-      'supply chain disruption', 'artificial intelligence', 'ai breakthrough',
-      'quantum computing', 'autonomous vehicles', 'space exploration',
-      'renewable energy', 'electric vehicles', 'tesla', 'nvidia', 'amd', 'intel',
-      'fda approval', 'drug trial', 'vaccine', 'medical breakthrough',
-      'pharmaceutical', 'biotech', 'healthcare reform', 'medicare', 'medicaid',
-      'bank failure', 'credit crisis', 'liquidity crisis', 'debt crisis',
-      'sovereign debt', 'central bank', 'currency crisis', 'hyperinflation',
-      'crypto regulation', 'digital currency', 'blockchain', 'defi', 'nft',
-      'central bank digital currency', 'energy crisis', 'solar', 'wind', 'nuclear',
-      'coal', 'natural gas', 'commodity prices', 'gold price', 'silver price',
-      'holiday sales', 'black friday', 'cyber monday', 'e-commerce',
-      'amazon', 'walmart', 'target', 'costco', 'banking', 'credit', 'loan',
-      'mortgage', 'financial services', 'investment bank', 'hedge fund',
-      'mutual fund', 'etf', 'index fund'
+      // CRITICAL FINANCIAL EVENTS - TOP PRIORITY
+      'takeover', 'take over', 'hostile takeover', 'friendly takeover', 'leveraged buyout', 'lbo',
+      'acquisition', 'acquire', 'acquired', 'acquiring', 'acquirer', 'target company',
+      'merger', 'merge', 'merged', 'merging', 'merger agreement', 'merger deal',
+      'investment', 'invest', 'invested', 'investing', 'investor', 'investment deal',
+      'earnings', 'earnings report', 'quarterly earnings', 'annual earnings', 'earnings beat', 'earnings miss',
+      'earnings surprise', 'earnings guidance', 'earnings forecast', 'earnings estimate',
+      'loss', 'losses', 'net loss', 'quarterly loss', 'annual loss', 'operating loss',
+      'revenue', 'revenue growth', 'revenue decline', 'quarterly revenue', 'annual revenue',
+      'profit', 'profits', 'net profit', 'quarterly profit', 'annual profit', 'operating profit',
+      
+      // HIGH IMPACT CORPORATE ACTIONS
+      'ipo', 'initial public offering', 'going public', 'public offering', 'secondary offering',
+      'dividend', 'dividend increase', 'dividend cut', 'dividend suspension', 'special dividend',
+      'stock split', 'reverse split', 'stock buyback', 'share buyback', 'repurchase',
+      'spin-off', 'spinoff', 'divestiture', 'asset sale', 'business sale',
+      'partnership', 'strategic partnership', 'joint venture', 'alliance', 'collaboration',
+      'funding', 'funding round', 'series a', 'series b', 'series c', 'venture capital',
+      'private equity', 'hedge fund', 'institutional investor', 'activist investor',
+      
+      // EXECUTIVE & GOVERNANCE CHANGES
+      'ceo', 'chief executive', 'ceo resignation', 'ceo departure', 'ceo appointment',
+      'cfo', 'chief financial officer', 'cfo resignation', 'cfo departure', 'cfo appointment',
+      'cto', 'chief technology officer', 'cto resignation', 'cto departure', 'cto appointment',
+      'board', 'board member', 'board resignation', 'board appointment', 'board shakeup',
+      'executive', 'executive departure', 'executive appointment', 'leadership change',
+      'management', 'management change', 'management shakeup', 'management restructuring',
+      
+      // REGULATORY & LEGAL ISSUES
+      'sec', 'securities and exchange commission', 'sec investigation', 'sec filing',
+      'sec enforcement', 'sec settlement', 'sec fine', 'sec penalty',
+      'regulatory', 'regulatory action', 'regulatory approval', 'regulatory investigation',
+      'lawsuit', 'class action', 'legal action', 'litigation', 'settlement',
+      'fraud', 'accounting fraud', 'financial fraud', 'securities fraud',
+      'audit', 'audit issues', 'audit findings', 'audit problems', 'audit failure',
+      'material weakness', 'going concern', 'delisting', 'trading halt', 'trading suspension',
+      
+      // FINANCIAL DISTRESS & RESTRUCTURING
+      'bankruptcy', 'chapter 11', 'chapter 7', 'liquidation', 'restructuring',
+      'debt restructuring', 'debt refinancing', 'debt default', 'debt crisis',
+      'liquidity', 'liquidity crisis', 'liquidity problems', 'cash flow problems',
+      'layoffs', 'job cuts', 'workforce reduction', 'headcount reduction',
+      'cost cutting', 'expense reduction', 'operational efficiency', 'restructuring plan',
+      
+      // MARKET MOVEMENTS & VOLATILITY
+      'surge', 'plunge', 'rally', 'crash', 'spike', 'drop', 'jump', 'fall',
+      'volatility', 'market volatility', 'price volatility', 'trading volume',
+      'market crash', 'flash crash', 'circuit breaker', 'bear market', 'bull market',
+      'panic selling', 'margin call', 'forced liquidation', 'fire sale',
+      'distressed assets', 'distressed sale', 'distressed company',
+      
+      // ECONOMIC INDICATORS & POLICY
+      'fed', 'federal reserve', 'interest rate', 'rate cut', 'rate hike', 'rate decision',
+      'inflation', 'deflation', 'stagflation', 'inflation data', 'cpi', 'ppi',
+      'gdp', 'gdp growth', 'gdp contraction', 'economic growth', 'economic decline',
+      'unemployment', 'jobless claims', 'employment data', 'labor market',
+      'central bank', 'monetary policy', 'fiscal policy', 'quantitative easing', 'tapering',
+      'trade war', 'tariff', 'tariffs', 'sanctions', 'trade agreement', 'trade deal',
+      
+      // SECTOR-SPECIFIC HIGH IMPACT
+      'fda', 'fda approval', 'fda rejection', 'drug approval', 'drug trial', 'clinical trial',
+      'vaccine', 'medical breakthrough', 'pharmaceutical', 'biotech', 'healthcare',
+      'oil', 'oil price', 'crude oil', 'energy', 'natural gas', 'renewable energy',
+      'bitcoin', 'crypto', 'cryptocurrency', 'blockchain', 'digital currency',
+      'artificial intelligence', 'ai', 'machine learning', 'quantum computing',
+      'autonomous vehicles', 'electric vehicles', 'tesla', 'space exploration',
+      
+      // BREAKING NEWS & URGENCY
+      'breaking', 'alert', 'urgent', 'immediate', 'crisis', 'emergency', 'developing',
+      'just in', 'latest', 'update', 'exclusive', 'sources say', 'according to sources',
+      
+      // FINANCIAL PERFORMANCE INDICATORS
+      'beat', 'miss', 'exceed', 'fall short', 'outperform', 'underperform',
+      'guidance', 'forecast', 'outlook', 'projection', 'estimate', 'consensus',
+      'upgrade', 'downgrade', 'rating change', 'price target', 'analyst rating',
+      'margin', 'gross margin', 'operating margin', 'net margin', 'profit margin',
+      'cash', 'cash position', 'cash flow', 'free cash flow', 'operating cash flow',
+      'debt', 'debt level', 'debt ratio', 'leverage', 'debt to equity',
+      
+      // MARKET SENTIMENT & OUTLOOK
+      'bullish', 'bearish', 'neutral', 'optimistic', 'pessimistic', 'cautious',
+      'recession', 'recovery', 'growth', 'decline', 'expansion', 'contraction',
+      'outlook', 'forecast', 'prediction', 'expectation', 'anticipation',
+      'risk', 'risk assessment', 'risk management', 'uncertainty', 'volatility',
+      
+      // SPECIFIC COMPANY ACTIONS
+      'amazon', 'apple', 'microsoft', 'google', 'alphabet', 'tesla', 'meta', 'facebook',
+      'nvidia', 'netflix', 'amd', 'intel', 'oracle', 'salesforce', 'adobe',
+      'jpmorgan', 'bank of america', 'wells fargo', 'goldman sachs', 'morgan stanley',
+      'walmart', 'target', 'costco', 'home depot', 'lowes', 'mcdonalds', 'starbucks',
+      'exxon', 'chevron', 'conocophillips', 'schlumberger', 'occidental petroleum'
     ];
   }
 
