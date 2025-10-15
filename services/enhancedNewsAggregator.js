@@ -109,6 +109,13 @@ class EnhancedNewsAggregator {
         impactKeywords: ['breaking', 'alert', 'urgent', 'crisis', 'emergency']
       },
       {
+        name: 'CNBC Breaking News Enhanced',
+        url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114',
+        category: 'financial',
+        priority: 'critical',
+        impactKeywords: ['breaking', 'alert', 'urgent', 'crisis', 'emergency', 'market crash', 'fed', 'earnings', 'merger', 'acquisition']
+      },
+      {
         name: 'Reuters Breaking',
         url: 'https://feeds.reuters.com/reuters/businessNews',
         category: 'financial',
@@ -144,6 +151,34 @@ class EnhancedNewsAggregator {
         category: 'crypto',
         priority: 'medium',
         impactKeywords: ['bitcoin', 'crypto', 'blockchain', 'ethereum', 'defi']
+      },
+      // Reddit News Sources - Special Processing
+      {
+        name: 'Reddit Business',
+        url: 'https://www.reddit.com/r/business/hot.json',
+        category: 'reddit',
+        priority: 'high',
+        impactKeywords: ['business', 'finance', 'economy', 'market', 'stock', 'investment'],
+        isReddit: true,
+        subreddit: 'business'
+      },
+      {
+        name: 'Reddit Economics',
+        url: 'https://www.reddit.com/r/economics/hot.json',
+        category: 'reddit',
+        priority: 'high',
+        impactKeywords: ['economics', 'economy', 'fed', 'inflation', 'gdp', 'unemployment', 'policy'],
+        isReddit: true,
+        subreddit: 'economics'
+      },
+      {
+        name: 'Reddit Finance',
+        url: 'https://www.reddit.com/r/finance/hot.json',
+        category: 'reddit',
+        priority: 'high',
+        impactKeywords: ['finance', 'banking', 'credit', 'loan', 'mortgage', 'investment', 'trading'],
+        isReddit: true,
+        subreddit: 'finance'
       },
       {
         name: 'CoinDesk',
@@ -549,7 +584,14 @@ class EnhancedNewsAggregator {
       'nvidia', 'netflix', 'amd', 'intel', 'oracle', 'salesforce', 'adobe',
       'jpmorgan', 'bank of america', 'wells fargo', 'goldman sachs', 'morgan stanley',
       'walmart', 'target', 'costco', 'home depot', 'lowes', 'mcdonalds', 'starbucks',
-      'exxon', 'chevron', 'conocophillips', 'schlumberger', 'occidental petroleum'
+      'exxon', 'chevron', 'conocophillips', 'schlumberger', 'occidental petroleum',
+      
+      // REDDIT-SPECIFIC HIGH IMPACT KEYWORDS
+      'viral', 'trending', 'hot', 'front page', 'top post', 'highly upvoted',
+      'breaking news', 'urgent update', 'market alert', 'trading halt',
+      'reddit gold', 'awarded', 'gilded', 'platinum', 'silver award',
+      'community choice', 'moderator approved', 'verified', 'confirmed',
+      'live discussion', 'mega thread', 'sticky post', 'announcement'
     ];
   }
 
